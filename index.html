@@ -5,19 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Tailwind only, no external CSS -->
 </head>
 
 <body class="m-0 font-sans antialiased p-0">
-  <div class="banner relative overflow-hidden border border-black">
-    <div class="banner_content text-white">
-      <div class="searchHeader flex items-center justify-between w-full"><a href="/" class="no-underline">
-          <div class="border-radius-8 rounded-lg">
+  <div class="relative overflow-hidden border border-black bg-cover bg-center"
+    style="background-image: url('https://studenttribe-dev.s3.ap-south-1.amazonaws.com/images/banner.jpeg');">
+    <div class="text-white bg-black/70 pb-8">
+      <div class="flex items-center justify-between w-full px-8 py-4">
+        <a href="/" class="no-underline">
+          <div class="rounded-lg">
             <img src="public/stlogoTop.svg" alt="student-tribe-logo" class="w-12 h-12" />
           </div>
         </a>
         <div
-          class="dropdownWrapper flex items-center justify-between rounded-xl overflow-hidden bg-white border border-white">
+          class="flex items-center justify-between rounded-xl overflow-hidden bg-white border border-white px-4 py-2">
           <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M9.50001 1.1875C7.76844 1.18954 6.10838 1.87831 4.88397 3.10272C3.65957 4.32712 2.9708 5.98718 2.96876 7.71875C2.96668 9.13379 3.4289 10.5104 4.28451 11.6375C4.28451 11.6375 4.46263 11.872 4.49173 11.9059L9.50001 17.8125L14.5107 11.9029C14.5368 11.8714 14.7155 11.6375 14.7155 11.6375L14.7161 11.6357C15.5713 10.5091 16.0333 9.13314 16.0313 7.71875C16.0292 5.98718 15.3404 4.32712 14.116 3.10272C12.8916 1.87831 11.2316 1.18954 9.50001 1.1875ZM9.50001 10.0938C9.03028 10.0938 8.57109 9.95446 8.18053 9.69349C7.78996 9.43252 7.48555 9.0616 7.30579 8.62762C7.12603 8.19365 7.079 7.71612 7.17064 7.25541C7.26228 6.79471 7.48848 6.37152 7.82063 6.03937C8.15278 5.70722 8.57596 5.48102 9.03667 5.38938C9.49737 5.29774 9.97491 5.34478 10.4089 5.52454C10.8429 5.70429 11.2138 6.0087 11.4747 6.39927C11.7357 6.78984 11.875 7.24902 11.875 7.71875C11.8742 8.3484 11.6237 8.95203 11.1785 9.39726C10.7333 9.84249 10.1297 10.093 9.50001 10.0938Z"
@@ -86,7 +88,7 @@
           </div>
         </div>
       </div>
-      <div class="content py-2.5">
+      <div class="content py-2.5 px-8">
         <p class="text-2xl font-light m-0 py-2.5">Unleash the Possibilities!</p>
         <h2 class="text-5xl font-medium m-0">Elevate Your College Experience with </h2>
         <h1 class="text-red-600 text-6xl font-bold m-0">Student Tribe Events</h1>
@@ -95,7 +97,8 @@
           thought-provoking workshops, our events page is your gateway to an unforgettable journey on. Stay tuned for
           uptimes on the latest happenings and make every moment count with Student Tribe!</p>
       </div>
-      <div class="categorySearch flex items-center bg-white text-black rounded-xl overflow-hidden mt-10">
+      <div
+        class="categorySearch flex items-center bg-white text-black rounded-xl overflow-hidden mt-10 pb-0 max-w-4xl mx-auto">
         <div class="category flex flex-col justify-start border-r border-gray-300 p-4">
           <div class="label">Category</div>
           <div class="dropdown">
@@ -125,17 +128,22 @@
 
   <div class="trending px-8">
     <h1 class="pt-4 font-extrabold text-3xl">TRENDING EVENTS</h1>
-    <div class="events">
-      <article class="event-card">
-        <div class="event-card__image">
-          <img src="public/meetups.png" alt="Fast & Curious by Student Tribe" />
-          <span class="event-card__badge event-card__badge--primary">College-events</span>
-          <span class="event-card__badge event-card__badge--secondary">Adventure</span>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center mt-6">
+      <!-- Event Card 1 -->
+      <div
+        class="bg-white border border-gray-200 rounded-2xl shadow-lg max-w-[480px] w-full overflow-hidden transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+        <div class="relative aspect-[24/9]">
+          <img src="public/meetups.png" alt="Fast & Curious by Student Tribe" class="w-full h-full object-cover" />
+          <span
+            class="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow">College-events</span>
+          <span
+            class="absolute top-4 right-36 bg-gradient-to-r from-indigo-600 to-pink-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow">Adventure</span>
         </div>
-        <div class="event-card__body">
-          <h2 class="event-card__title">Fast &amp; Curious – Student Tribe Internal Company Event</h2>
-          <ul class="event-card__meta">
-            <li>
+        <div class="p-6">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Fast &amp; Curious – Student Tribe Internal Company Event
+          </h2>
+          <ul class="mb-4 space-y-2">
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 3.333V1.666" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" />
                 <path d="M5 3.333V1.666" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" />
@@ -144,7 +152,7 @@
               </svg>
               <span>Oct 14 – 18, 10:22 AM – 10:22 AM</span>
             </li>
-            <li>
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16.25 8.75C16.25 12.5 10 17.5 10 17.5C10 17.5 3.75 12.5 3.75 8.75C3.75 5.67893 6.17893 3.25 9.25 3.25C12.3211 3.25 14.75 5.67893 14.75 8.75Z"
@@ -156,25 +164,32 @@
               <span>Hyderabad</span>
             </li>
           </ul>
-          <div class="event-card__footer">
-            <div class="event-card__price">
-              <span class="event-card__price-label">Starts from</span>
-              <span class="event-card__price-amount">₹1</span>
+          <div class="flex items-center justify-between mt-6">
+            <div>
+              <span class="block text-red-500 text-sm font-semibold">Starts from</span>
+              <span class="block text-red-500 text-2xl font-bold">₹1</span>
             </div>
-            <button type="button" class="event-card__cta">Book Now</button>
+            <button type="button"
+              class="bg-gradient-to-r from-red-700 to-red-400 text-white font-semibold rounded-lg px-7 py-3 text-base shadow hover:shadow-lg hover:-translate-y-0.5 transition">Book
+              Now</button>
           </div>
         </div>
-      </article>
-      <article class="event-card">
-        <div class="event-card__image">
-          <img src="public/meetups.png" alt="Fast & Curious by Student Tribe" />
-          <span class="event-card__badge event-card__badge--primary">College-events</span>
-          <span class="event-card__badge event-card__badge--secondary">Adventure</span>
+      </div>
+      <!-- Event Card 2 -->
+      <div
+        class="bg-white border border-gray-200 rounded-2xl shadow-lg max-w-[480px] w-full overflow-hidden transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+        <div class="relative aspect-[24/9]">
+          <img src="public/meetups.png" alt="Fast & Curious by Student Tribe" class="w-full h-full object-cover" />
+          <span
+            class="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow">College-events</span>
+          <span
+            class="absolute top-4 right-36 bg-gradient-to-r from-indigo-600 to-pink-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow">Adventure</span>
         </div>
-        <div class="event-card__body">
-          <h2 class="event-card__title">Fast &amp; Curious – Student Tribe Internal Company Event</h2>
-          <ul class="event-card__meta">
-            <li>
+        <div class="p-6">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Fast &amp; Curious – Student Tribe Internal Company Event
+          </h2>
+          <ul class="mb-4 space-y-2">
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 3.333V1.666" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" />
                 <path d="M5 3.333V1.666" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" />
@@ -183,7 +198,7 @@
               </svg>
               <span>Oct 14 – 18, 10:22 AM – 10:22 AM</span>
             </li>
-            <li>
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16.25 8.75C16.25 12.5 10 17.5 10 17.5C10 17.5 3.75 12.5 3.75 8.75C3.75 5.67893 6.17893 3.25 9.25 3.25C12.3211 3.25 14.75 5.67893 14.75 8.75Z"
@@ -195,25 +210,32 @@
               <span>Hyderabad</span>
             </li>
           </ul>
-          <div class="event-card__footer">
-            <div class="event-card__price">
-              <span class="event-card__price-label">Starts from</span>
-              <span class="event-card__price-amount">₹1</span>
+          <div class="flex items-center justify-between mt-6">
+            <div>
+              <span class="block text-red-500 text-sm font-semibold">Starts from</span>
+              <span class="block text-red-500 text-2xl font-bold">₹1</span>
             </div>
-            <button type="button" class="event-card__cta">Book Now</button>
+            <button type="button"
+              class="bg-gradient-to-r from-red-700 to-red-400 text-white font-semibold rounded-lg px-7 py-3 text-base shadow hover:shadow-lg hover:-translate-y-0.5 transition">Book
+              Now</button>
           </div>
         </div>
-      </article>
-      <article class="event-card">
-        <div class="event-card__image">
-          <img src="public/meetups.png" alt="Fast & Curious by Student Tribe" />
-          <span class="event-card__badge event-card__badge--primary">College-events</span>
-          <span class="event-card__badge event-card__badge--secondary">Adventure</span>
+      </div>
+      <!-- Event Card 3 -->
+      <div
+        class="bg-white border border-gray-200 rounded-2xl shadow-lg max-w-[480px] w-full overflow-hidden transition-transform duration-200 hover:shadow-xl hover:-translate-y-1">
+        <div class="relative aspect-[24/9]">
+          <img src="public/meetups.png" alt="Fast & Curious by Student Tribe" class="w-full h-full object-cover" />
+          <span
+            class="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-orange-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow">College-events</span>
+          <span
+            class="absolute top-4 right-36 bg-gradient-to-r from-indigo-600 to-pink-400 text-white text-xs font-semibold px-4 py-1 rounded-full shadow">Adventure</span>
         </div>
-        <div class="event-card__body">
-          <h2 class="event-card__title">Fast &amp; Curious – Student Tribe Internal Company Event</h2>
-          <ul class="event-card__meta">
-            <li>
+        <div class="p-6">
+          <h2 class="text-xl font-bold text-gray-900 mb-4">Fast &amp; Curious – Student Tribe Internal Company Event
+          </h2>
+          <ul class="mb-4 space-y-2">
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 3.333V1.666" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" />
                 <path d="M5 3.333V1.666" stroke="#1F2937" stroke-width="1.5" stroke-linecap="round" />
@@ -222,7 +244,7 @@
               </svg>
               <span>Oct 14 – 18, 10:22 AM – 10:22 AM</span>
             </li>
-            <li>
+            <li class="flex items-center gap-3 text-gray-700 text-sm">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16.25 8.75C16.25 12.5 10 17.5 10 17.5C10 17.5 3.75 12.5 3.75 8.75C3.75 5.67893 6.17893 3.25 9.25 3.25C12.3211 3.25 14.75 5.67893 14.75 8.75Z"
@@ -234,122 +256,94 @@
               <span>Hyderabad</span>
             </li>
           </ul>
-          <div class="event-card__footer">
-            <div class="event-card__price">
-              <span class="event-card__price-label">Starts from</span>
-              <span class="event-card__price-amount">₹1</span>
+          <div class="flex items-center justify-between mt-6">
+            <div>
+              <span class="block text-red-500 text-sm font-semibold">Starts from</span>
+              <span class="block text-red-500 text-2xl font-bold">₹1</span>
             </div>
-            <button type="button" class="event-card__cta">Book Now</button>
+            <button type="button"
+              class="bg-gradient-to-r from-red-700 to-red-400 text-white font-semibold rounded-lg px-7 py-3 text-base shadow hover:shadow-lg hover:-translate-y-0.5 transition">Book
+              Now</button>
           </div>
         </div>
-      </article>
-
+      </div>
     </div>
   </div>
 
-  <div class="find-experiences sm:px-8">
-    <h1 class="px-8 pt-4 font-extrabold text-3xl">
-      FIND NEW EXPERIENCES</h1>
-    <div class="experiences grid gap-5 mx-5 my-10">
-      <div class="box b1 relative h-[200px] border-white rounded-2xl overflow-hidden"
-        style="background-color:rgb(255, 0, 100); border:none">
-        <p class="text-2xl font-black p-4 text-white">
-          Exhibitions
-        </p>
+  <div class="find-experiences px-8">
+    <h1 class="pt-4 font-extrabold text-3xl">FIND NEW EXPERIENCES</h1>
+    <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-10">
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:rgb(255, 0, 100);">
+        <p class="text-2xl font-black p-4 text-white">Exhibitions</p>
         <img src="public/exhibition.png" alt="Exhibitions"
-          class="absolute -bottom-8 -right-4 w-56 h-56 object-contain" />
+          class="absolute -bottom-6 -right-0 w-48 h-48 object-contain" />
       </div>
-      <div class="box b2 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:rgb(50, 192, 240);">
-        <p class="text-2xl font-black p-4 text-white">
-          Meetups
-        </p>
-        <img src="public/meetups.png" alt="Meetups" class="absolute -bottom-8 -right-4 w-56 h-56 object-contain" />
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:rgb(50, 192, 240);">
+        <p class="text-2xl font-black p-4 text-white">Meetups</p>
+        <img src="public/meetups.png" alt="Meetups" class="absolute -bottom-6 -right-0 w-48 h-48 object-contain" />
       </div>
-      <div class="box b3 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:rgb(255, 74, 5);">
-        <p class="text-2xl font-black p-4 text-white">
-          General
-        </p>
-        <img src="public/general.png" alt="General" class="absolute -bottom-8 -right-4 w-56 h-56 object-contain" />
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:rgb(255, 74, 5);">
+        <p class="text-2xl font-black p-4 text-white">General</p>
+        <img src="public/general.png" alt="General" class="absolute -bottom-6 -right-0 w-48 h-48 object-contain" />
       </div>
-      <div class="box b4 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:rgb(44, 57, 140);">
-        <p class="text-2xl font-black p-4 text-white">
-          Outdoor Events
-        </p>
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:rgb(44, 57, 140);">
+        <p class="text-2xl font-black p-4 text-white">Outdoor Events</p>
         <img src="public/outdoorevents.png" alt="Outdoor Events"
-          class="absolute -bottom-8 -right-4 w-56 h-56 object-contain" />
+          class="absolute -bottom-10 -right-0 w-48 h-48 object-contain" />
       </div>
-      <div class="box b5 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:#0E1730;">
-        <p class="text-2xl font-black p-4 text-white">
-          Workshops
-        </p>
-        <img src="public/workshops.png" alt="Workshops" class="absolute -bottom-18 -right-4 w-80 h-80 object-contain" />
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:#0E1730;">
+        <p class="text-2xl font-black p-4 text-white">Workshops</p>
+        <img src="public/workshops.png" alt="Workshops" class="absolute -bottom-8 right-0 w-56 h-48 object-contain" />
       </div>
-      <div class="box b6 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:#FFB905;">
-        <p class="text-2xl font-black p-4 text-white">
-          College Events
-        </p>
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:#FFB905;">
+        <p class="text-2xl font-black p-4 text-white">College Events</p>
         <img src="public/collegeevents.png" alt="College Events"
-          class="absolute -bottom-18 -right-4 w-72 h-72 object-contain" />
+          class="absolute -bottom-10 right-0 w-56 h-48 object-contain" />
       </div>
-      <div class="box b7 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:#B10000;">
-        <p class="text-2xl font-black p-4 text-white">
-          Films
-        </p>
-        <img src="public/films.png" alt="Films" class="absolute -bottom-8 -right-4 w-56 h-56 object-contain" />
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:#B10000;">
+        <p class="text-2xl font-black p-4 text-white">Films</p>
+        <img src="public/films.png" alt="Films" class="absolute -bottom-6 -right-0 w-48 h-48 object-contain" />
       </div>
-      <div class="box b8 relative h-[200px] border border-transparent rounded-2xl overflow-hidden"
-        style="background-color:#00A99B;">
-        <p class="text-2xl font-black p-4 text-white">
-          Courses
-        </p>
-        <img src="public/courses.png" alt="Courses" class="absolute -bottom-8 -right-4 w-56 h-56 object-contain" />
+      <div class="relative h-[200px] rounded-2xl overflow-hidden" style="background-color:#00A99B;">
+        <p class="text-2xl font-black p-4 text-white">Courses</p>
+        <img src="public/courses.png" alt="Courses" class="absolute -bottom-6 -right-0 w-48 h-48 object-contain" />
       </div>
     </div>
   </div>
 
-  <div
-    class="joinTribe staticContent bg-gray-100 rounded-xl text-black border border-gray-300 m-8 p-4 sm:p-8 space-y-3">
+  <div class="bg-gray-100 rounded-xl text-black border border-gray-300 m-8 p-4 sm:p-8 space-y-3">
     <p class="text-gray-700 text-lg m-0">Follow us on your favorite platforms for the latest updates, tips, and
       inspiration.</p>
     <h1 class="text-4xl py-4 font-bold">Join the Student Tribe Community!</h1>
-    <p class="text-gray-700 text-md m-0 font-light"><span class="font-semibold">Dive Deeper!</span>
-      Connect
-      with us on Linkedin,
-      Instagram and Facebook for the
-      latest buzz, insider tips &amp; more.</p>
-    <p class="text-gray-700 text-md m-0 font-light"><span class="font-semibold">Join the Crew!</span> Engage, ask, share
-      on our
-      student tribe app. Be part of
-      our vibrant community.</p>
+    <p class="text-gray-700 text-md m-0 font-light"><span class="font-semibold">Dive Deeper!</span> Connect with us on
+      Linkedin, Instagram and Facebook for the latest buzz, insider tips &amp; more.</p>
+    <p class="text-gray-700 text-md m-0 font-light"><span class="font-semibold">Join the Crew!</span> Engage, ask,
+      share
+      on our student tribe app. Be part of our vibrant community.</p>
     <p class="text-gray-700 text-md m-0 font-light"><span class="font-semibold">Be in the Know!</span> New
-      Opportunities? Exclusive
-      events? Follow us and be
-      the first.</p>
-    <div class="link-icons flex gap-8 my-8 justify-start items-center w-64"><a href="https://facebook.com/stumagz"
-        target="_blank" rel="noreferrer"><img src="/public/fb.svg" alt="facebook"></a><a
-        href="https://linkedin.com/stumagz" target="_blank" rel="noreferrer"><img src="/public/linkedin.svg"
-          alt="linkedin"></a><a href="https://instagram.com/stumagz" target="_blank" rel="noreferrer"><img
-          src="/public/insta.svg" alt="instagram"></a><a href="https://x.com/Stumagz" target="_blank"
-        rel="noreferrer"><img src="/public/x.svg" alt="X"></a></div>
+      Opportunities? Exclusive events? Follow us and be the first.</p>
+    <div class="flex gap-8 my-8 justify-start items-center w-64">
+      <a href="https://facebook.com/stumagz" target="_blank" rel="noreferrer"><img src="/public/fb.svg"
+          alt="facebook"></a>
+      <a href="https://linkedin.com/stumagz" target="_blank" rel="noreferrer"><img src="/public/linkedin.svg"
+          alt="linkedin"></a>
+      <a href="https://instagram.com/stumagz" target="_blank" rel="noreferrer"><img src="/public/insta.svg"
+          alt="instagram"></a>
+      <a href="https://x.com/Stumagz" target="_blank" rel="noreferrer"><img src="/public/x.svg" alt="X"></a>
+    </div>
   </div>
 
   <div
-    class="staticContent findYourTribe flex items-center justify-between text-white rounded-xl overflow-hidden relative border border-gray-300 m-8 p-8 pr-[6%]">
-    <div class="content w-[60%]"><img src="/static/media/findTribeImg.9b039faeb72a23b5848bc44eb140b03c.svg"
-        alt="tribe-img" class="find-your-tribe-image-mobile hidden" width="72px">
-      <p class="subtitle text-base m-0">Unpause the fun. Download Student Tribe.</p>
+    class="flex items-center justify-between text-white rounded-xl overflow-hidden relative border border-gray-300 m-8 p-8 pr-[6%] bg-gradient-to-br from-red-700 to-red-900">
+    <div class="w-[60%]">
+      <img src="/static/media/findTribeImg.9b039faeb72a23b5848bc44eb140b03c.svg" alt="tribe-img" class="hidden"
+        width="72px">
+      <p class="text-base m-0">Unpause the fun. Download Student Tribe.</p>
       <h1 class="text-5xl font-black m-0">Dive into Your Vibe. Find Your Tribe.</h1>
-      <p class="find-your-tribe-description m-0">Experience live music, comedy, workshops, sports, and more! Discover
-        new
-        hobbies, groove to your favorite artists, and make friends who share your passions. Don't wait, download the
-        Student Tribe app today!</p>
-      <div class="link-icons flex my-8">
+      <p class="m-0">Experience live music, comedy, workshops, sports, and more! Discover new hobbies, groove to your
+        favorite artists, and make friends who share your passions. Don't wait, download the Student Tribe app today!
+      </p>
+      <div class="flex my-8 gap-4">
         <a href="https://apps.apple.com/us/app/student-tribe/id1362552730" target="_blank" rel="noreferrer">
           <img src="public/applestore.svg" alt="app-store-badge" class="h-12">
         </a>
@@ -358,39 +352,39 @@
           <img src="public/playstore.svg" alt="google-play-badge" class="h-12">
         </a>
       </div>
-    </div><img src="public/studentImage.svg" alt="tribe-img" class="find-your-tribe-image-desktop block" width="220px">
+    </div>
+    <img src="public/studentImage.svg" alt="tribe-img" class="block" width="220px">
   </div>
 
-  <div class="footer mt-10 bg-[#f6efef]">
-    <div class="content max-w-7xl mx-auto px-6 lg:px-8 py-16">
-      <div class="footer-grid">
+  <div class="mt-10 bg-[#f6efef]">
+    <div class="max-w-full mx-0 px-6 lg:px-8 py-16">
+      <div class="grid gap-12 lg:gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-start">
         <div class="space-y-6 text-gray-900">
           <h2 class="text-3xl font-semibold text-black">Contact Us</h2>
           <p class="m-0 text-lg leading-8">Trendz JR,<br>Plot No: 23 &amp; 24 Survey No: 31<br>to 36, 2nd
             Floor,<br>Vittal Rao Nagar Rd<br>Gafoornagar, Madhapur,<br>Hyderabad, Telangana-500081</p>
           <p class="m-0 text-lg leading-8">Email: <a href="mailto:info@studenttribe.in"
-              class="text-gray-900 hover:text-red-700">info@studenttribe.in</a>
-          </p>
+              class="text-gray-900 hover:text-red-700">info@studenttribe.in</a></p>
         </div>
         <div class="space-y-6 text-gray-900">
           <h2 class="text-3xl font-semibold text-black">Follow us on:</h2>
           <ul class="space-y-4 text-lg">
-            <li class="flex !justify-start items-center gap-4">
+            <li class="flex items-center gap-4">
               <img src="public/linkedin.svg" alt="LinkedIn" class="h-8 w-8">
               <a href="https://linkedin.com/stumagz" target="_blank" rel="noreferrer"
                 class="text-gray-900 hover:text-red-700">linkedin.com/stumagz</a>
             </li>
-            <li class="flex !justify-start items-center gap-4">
+            <li class="flex items-center gap-4">
               <img src="public/fb.svg" alt="YouTube" class="h-8 w-8">
               <a href="https://youtube.com/stumagz" target="_blank" rel="noreferrer"
                 class="text-gray-900 hover:text-red-700">youtube.com/stumagz</a>
             </li>
-            <li class="flex !justify-start items-center gap-4">
+            <li class="flex items-center gap-4">
               <img src="public/insta.svg" alt="Instagram" class="h-8 w-8">
               <a href="https://instagram.com/stumagz" target="_blank" rel="noreferrer"
                 class="text-gray-900 hover:text-red-700">instagram.com/stumagz</a>
             </li>
-            <li class="flex !justify-start items-center gap-4">
+            <li class="flex items-center gap-4">
               <img src="public/x.svg" alt="X" class="h-8 w-8">
               <a href="https://twitter.com/Stumagz" target="_blank" rel="noreferrer"
                 class="text-gray-900 hover:text-red-700">twitter.com/Stumagz</a>
@@ -415,12 +409,11 @@
         </div>
       </div>
     </div>
-    <div
-      class="copyright sm:flex items-center justify-center bg-[#e8d8db] text-black text-base font-light p-1.5 relative">
+    <div class="flex items-center justify-center bg-[#e8d8db] text-black text-base font-light p-2 relative">
       <img src="public/stsmall.svg" alt="student-tribe-logo" class="absolute left-4 w-12 h-auto block">
-      <p class="mt-20 sm:mt-3">Copyright@Student Tribe (A unit of Colosseum CQ Solutions&nbsp;Pvt&nbsp;Ltd). All rights
-        reserved.
-      </p>
+      <p class="mt-20 sm:mt-3">Copyright@Student Tribe (A unit of Colosseum CQ Solutions&nbsp;Pvt&nbsp;Ltd). All
+        rights
+        reserved.</p>
     </div>
   </div>
 </body>
